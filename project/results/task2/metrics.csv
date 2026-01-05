@@ -1,0 +1,3 @@
+method,silhouette,calinski_harabasz
+your_existing_clusters,0.5155804381852136,16757.429862705874
+baseline_PCA2_plus_KMeans,0.3289733596280735,5373.481108676914

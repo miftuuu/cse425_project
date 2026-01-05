@@ -1,0 +1,49 @@
+/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Saving to: /Users/miftahuljannah/Desktop/project/data/processed/jamendo_metadata.csv
+Removed column: audio
+Traceback (most recent call last):
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/audio.py", line 108, in encode_example
+    from torchcodec.encoders import AudioEncoder  # needed to write audio files
+ModuleNotFoundError: No module named 'torchcodec'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/miftahuljannah/Desktop/project/src/prepare_jamendo.py", line 43, in <module>
+    main()
+  File "/Users/miftahuljannah/Desktop/project/src/prepare_jamendo.py", line 24, in main
+    for i, item in enumerate(ds):
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 2543, in __iter__
+    for key, example in ex_iterable:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 2060, in __iter__
+    for key, pa_table in self._iter_arrow():
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 2083, in _iter_arrow
+    for key, pa_table in self.ex_iterable._iter_arrow():
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 544, in _iter_arrow
+    for key, pa_table in iterator:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 164, in _convert_to_arrow
+    for key, example in iterator:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 1257, in __iter__
+    yield from self._iter()
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 1436, in _iter
+    for key, transformed_example in outputs:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 1417, in iter_outputs
+    for i, key_example in inputs_iterator:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 1306, in iter_inputs
+    for key, example in iterator:
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 2073, in __iter__
+    example = _apply_feature_types_on_example(
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/iterable_dataset.py", line 1980, in _apply_feature_types_on_example
+    encoded_example = features.encode_example(example)
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/features.py", line 2059, in encode_example
+    return encode_nested_example(self, example)
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/features.py", line 1350, in encode_nested_example
+    {k: encode_nested_example(schema[k], obj.get(k), level=level + 1) for k in schema}
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/features.py", line 1350, in <dictcomp>
+    {k: encode_nested_example(schema[k], obj.get(k), level=level + 1) for k in schema}
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/features.py", line 1373, in encode_nested_example
+    return schema.encode_example(obj) if obj is not None else None
+  File "/Users/miftahuljannah/Desktop/project/.venv/lib/python3.9/site-packages/datasets/features/audio.py", line 110, in encode_example
+    raise ImportError("To support encoding audio data, please install 'torchcodec'.") from err
+ImportError: To support encoding audio data, please install 'torchcodec'.

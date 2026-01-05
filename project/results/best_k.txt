@@ -1,0 +1,2 @@
+Best VAE+KMeans k=2 silhouette=0.06817681342363358
+Best PCA+KMeans k=9 silhouette=0.14716419577598572
